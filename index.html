@@ -11,6 +11,7 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Tùy chỉnh nhỏ cho input number để ẩn mũi tên */
         input[type=number]::-webkit-inner-spin-button,
         input[type=number]::-webkit-outer-spin-button {
             -webkit-appearance: none;
@@ -24,12 +25,12 @@
 <body class="bg-gray-100 p-4 md:p-8">
 
     <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-        <!-- TIÊU ĐỀ -->
-        <div class="bg-blue-800 p-5">
+        <!-- TIÊU ĐỀ - Chuyển sang Navy -->
+        <div class="bg-blue-900 p-5">
             <h1 class="text-2xl md:text-3xl font-bold text-white text-center">
                 Mô phỏng Quyền Mua & Cổ Tức
             </h1>
-            <p class="text-center text-blue-100 text-sm mt-1">Công cụ hỗ trợ nhà đầu tư ra quyết định</p>
+            <p class="text-center text-blue-200 text-sm mt-1">Công cụ hỗ trợ nhà đầu tư ra quyết định</p>
         </div>
 
         <!-- KHỐI NHẬP LIỆU -->
@@ -43,7 +44,7 @@
                 <div>
                     <div class="mb-4">
                         <label for="currentShares" class="block text-sm font-medium text-gray-700 mb-1">1. Số lượng cổ phiếu (N)</label>
-                        <input type="number" id="currentShares" placeholder="Số CP dự định mua hoặc đang nắm giữ" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="number" id="currentShares" placeholder="Số CP đang nắm giữ" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                     <div class="mb-4">
                         <label for="priceBefore" class="block text-sm font-medium text-gray-700 mb-1">2. Giá đóng cửa trước GDKHQ (P)</label>
@@ -77,9 +78,9 @@
                 </div>
             </div>
             
-            <!-- Nút Tính Toán -->
+            <!-- Nút Tính Toán - Chuyển sang Navy -->
             <div class="mt-6 text-center">
-                <button id="calculateBtn" class="w-full md:w-1/2 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
+                <button id="calculateBtn" class="w-full md:w-1/2 bg-blue-800 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-900 transition duration-300 ease-in-out">
                     PHÂN TÍCH
                 </button>
             </div>
@@ -94,7 +95,8 @@
                 </h2>
                 <div class="bg-white p-6 rounded-lg shadow-md border border-blue-100">
                     <h3 class="text-lg font-semibold text-gray-800 mb-2">Giá cổ phiếu điều chỉnh (P')</h3>
-                    <p id="adjustedPriceResult" class="text-3xl font-bold text-blue-600 mb-4">
+                    <!-- Giá điều chỉnh - Navy -->
+                    <p id="adjustedPriceResult" class="text-3xl font-bold text-blue-800 mb-4">
                         <!-- 38,000 VND -->
                     </p>
                     <div class="bg-gray-100 p-4 rounded-md">
@@ -121,9 +123,11 @@
                             <thead class="bg-gray-100">
                                 <tr>
                                     <th class="p-4 text-left text-sm font-semibold text-gray-700">Tiêu chí so sánh</th>
-                                    <th class="p-4 text-left text-sm font-semibold text-white bg-green-600">
+                                    <!-- Tiêu đề Kịch bản 1 - Chuyển sang Emerald -->
+                                    <th class="p-4 text-left text-sm font-semibold text-white bg-emerald-600">
                                         ✅ THỰC HIỆN QUYỀN MUA
                                     </th>
+                                    <!-- Tiêu đề Kịch bản 2 - Giữ màu Đỏ -->
                                     <th class="p-4 text-left text-sm font-semibold text-white bg-red-600">
                                         ❌ TỪ BỎ QUYỀN MUA
                                     </th>
@@ -142,12 +146,14 @@
                                 </tr>
                                 <tr>
                                     <td class="p-4 font-medium text-gray-600">Số CP được mua thêm</td>
-                                    <td id="val-new1" class="p-4 font-semibold text-green-700"></td>
+                                    <!-- Text Emerald -->
+                                    <td id="val-new1" class="p-4 font-semibold text-emerald-700"></td>
                                     <td id="val-new2" class="p-4 font-semibold text-red-700">0 CP</td>
                                 </tr>
                                 <tr class="bg-gray-50">
                                     <td class="p-4 font-bold text-gray-800">Tổng số CP sau GDKHQ</td>
-                                    <td id="val-total-n1" class="p-4 font-bold text-lg text-green-700"></td>
+                                    <!-- Text Emerald -->
+                                    <td id="val-total-n1" class="p-4 font-bold text-lg text-emerald-700"></td>
                                     <td id="val-total-n2" class="p-4 font-bold text-lg text-red-700"></td>
                                 </tr>
                                 <tr>
@@ -165,12 +171,14 @@
                                     <td id="val-net-cash1" class="p-4 font-bold text-lg"></td>
                                     <td id="val-net-cash2" class="p-4 font-bold text-lg"></td>
                                 </tr>
+                                <!-- Nền highlight - Navy -->
                                 <tr class="bg-blue-50 border-t-2 border-blue-200">
                                     <td class="p-4 font-bold text-blue-800">
                                         Lợi ích / Lỗ tạm tính<br>
                                         <span class="text-xs font-normal">(Chênh lệch P' và Pa)</span>
                                     </td>
-                                    <td id="val-benefit" class="p-4 font-bold text-2xl text-green-600"></td>
+                                    <!-- Text Emerald -->
+                                    <td id="val-benefit" class="p-4 font-bold text-2xl text-emerald-600"></td>
                                     <td id="val-loss" class="p-4 font-bold text-2xl text-red-600"></td>
                                 </tr>
                             </tbody>
@@ -184,26 +192,26 @@
                         PHẦN 4: DIỄN GIẢI & KHUYẾN NGHỊ (TRƯỜNG HỢP CÓ QUYỀN MUA)
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                        <!-- Kịch bản 1: Thực hiện -->
-                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg shadow">
-                            <h4 class="font-bold text-lg text-green-800 mb-2">✅ KỊCH BẢN 1: THỰC HIỆN QUYỀN</h4>
-                            <p id="dynamic-reco-1" class="text-sm text-gray-700 space-y-2">
+                        <!-- Kịch bản 1 - Chuyển sang Emerald -->
+                        <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg shadow">
+                            <h4 class="font-bold text-lg text-emerald-800 mb-2">✅ KỊCH BẢN 1: THỰC HIỆN QUYỀN</h4>
+                            <div id="dynamic-reco-1" class="text-sm text-gray-700 space-y-2">
                                 <!-- Nội dung động -->
-                            </p>
+                            </div>
                         </div>
-                        <!-- Kịch bản 2: Từ bỏ -->
+                        <!-- Kịch bản 2 - Giữ màu Đỏ -->
                         <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg shadow">
                             <h4 class="font-bold text-lg text-red-800 mb-2">❌ KỊCH BẢN 2: TỪ BỎ QUYỀN</h4>
-                            <p id="dynamic-reco-2" class="text-sm text-gray-700 space-y-2">
+                            <div id="dynamic-reco-2" class="text-sm text-gray-700 space-y-2">
                                 <!-- Nội dung động -->
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Phần 5: Ví dụ minh họa -->
-                <div class="p-6 md:p-8 bg-blue-50">
-                    <h2 class="text-xl font-bold text-blue-900 border-b-2 border-blue-200 pb-2 mb-6">
+                <!-- Phần 5: Ví dụ minh họa - Nền trung tính -->
+                <div class="p-6 md:p-8 bg-gray-50">
+                    <h2 class="text-xl font-bold text-gray-800 border-b-2 border-gray-200 pb-2 mb-6">
                         PHẦN 5: VÍ DỤ MINH HỌA (QUÁN CÀ PHÊ "PHA LOÃNG")
                     </h2>
                     <div class="space-y-4 text-sm text-gray-700">
@@ -215,7 +223,7 @@
                             </li>
                             <li>
                                 <strong>✅ Kịch bản THỰC HIỆN QUYỀN:</strong> Bạn nộp 5 triệu, mua thêm 1 "Phần" mới. 
-                                <br>-> Bạn có tổng cộng 2 "Phần" (trên tổng 20) và vẫn giữ 1/10 tỷ lệ sở hữu quán. Bạn đã dùng 5 triệu tiền mặt để đổi lấy 1 "Phần" (tài sản) có giá trị cao hơn. <strong class="text-green-700">Bạn đã bảo toàn được tài sản của mình.</strong>
+                                <br>-> Bạn có tổng cộng 2 "Phần" (trên tổng 20) và vẫn giữ 1/10 tỷ lệ sở hữu quán. Bạn đã dùng 5 triệu tiền mặt để đổi lấy 1 "Phần" (tài sản) có giá trị cao hơn. <strong class="text-emerald-700">Bạn đã bảo toàn được tài sản của mình.</strong>
                             </li>
                             <li>
                                 <strong>❌ Kịch bản TỪ BỎ QUYỀN:</strong> Bạn không nộp tiền. Người khác sẽ mua "Phần" đó.
@@ -229,87 +237,92 @@
 
             <!-- KỊCH BẢN 2: CHỈ CÓ CỔ TỨC -->
             <div id="dividendOnlyAnalysis" class="hidden">
-                <!-- Phần 3: So sánh quyết định -->
+                <!-- Phần 3: So sánh quyết định (Sửa đổi) -->
                 <div class="p-6 md:p-8">
                     <h2 class="text-xl font-bold text-blue-900 border-b-2 border-blue-200 pb-2 mb-6">
                         PHẦN 3: SO SÁNH QUYẾT ĐỊNH (CHỈ CHIA CỔ TỨC/THƯỞNG)
                     </h2>
+                    <p class="text-sm text-gray-600 mb-4 italic">So sánh dành cho cổ đông ĐANG NẮM GIỮ (N) cổ phiếu tại giá (P).</p>
                     <div class="overflow-x-auto">
                         <table class="min-w-full border border-gray-200 rounded-lg">
                             <thead class="bg-gray-100">
                                 <tr>
                                     <th class="p-4 text-left text-sm font-semibold text-gray-700">Tiêu chí so sánh</th>
-                                    <th class="p-4 text-left text-sm font-semibold text-white bg-blue-600">
-                                        ✅ MUA/NẮM GIỮ TRƯỚC GDKHQ
+                                    <!-- Tiêu đề Kịch bản 1 - Chuyển sang Emerald -->
+                                    <th class="p-4 text-left text-sm font-semibold text-white bg-emerald-600">
+                                        ✅ NẮM GIỮ HƯỞNG QUYỀN
                                     </th>
-                                    <th class="p-4 text-left text-sm font-semibold text-white bg-orange-500">
-                                        ➡️ MUA SAU GDKHQ
+                                    <!-- Tiêu đề Kịch bản 2 - Chuyển sang Xám trung tính -->
+                                    <th class="p-4 text-left text-sm font-semibold text-white bg-gray-500">
+                                        🔄 BÁN (giá P) & MUA LẠI (giá P')
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
                                 <tr>
-                                    <td class="p-4 font-medium text-gray-600">Số lượng CP dự định mua/nắm giữ</td>
+                                    <td class="p-4 font-medium text-gray-600">Số CP nắm giữ ban đầu</td>
                                     <td id="div-val-n1" class="p-4"></td>
-                                    <td id="div-val-n2" class="p-4"></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-4 font-medium text-gray-600">Giá mua / CP (trung bình)</td>
-                                    <td id="div-val-price1" class="p-4 font-semibold"></td>
-                                    <td id="div-val-price2" class="p-4 font-semibold"></td>
-                                </tr>
-                                <tr class="bg-gray-50">
-                                    <td class="p-4 font-bold text-gray-800">Tổng vốn bỏ ra</td>
-                                    <td id="div-val-capital1" class="p-4 font-bold text-lg"></td>
-                                    <td id="div-val-capital2" class="p-4 font-bold text-lg"></td>
+                                    <td class="p-4">Bán <span id="div-val-n-sell"></span> tại giá P</td>
                                 </tr>
                                 <tr>
                                     <td class="p-4 font-medium text-gray-600">Tiền mặt nhận (Cổ tức)</td>
-                                    <td id="div-val-cash-in1" class="p-4 text-green-600 font-semibold"></td>
-                                    <td id="div-val-cash-in2" class="p-4">0 VND</td>
+                                    <!-- Text Emerald -->
+                                    <td id="div-val-cash-in1" class="p-4 text-emerald-600 font-semibold"></td>
+                                    <td class="p-4">0 VND</td>
                                 </tr>
                                 <tr>
                                     <td class="p-4 font-medium text-gray-600">Số CP thưởng/cổ tức</td>
-                                    <td id="div-val-bonus1" class="p-4 text-green-600 font-semibold"></td>
-                                    <td id="div-val-bonus2" class="p-4">0 CP</td>
+                                    <!-- Text Emerald -->
+                                    <td id="div-val-bonus1" class="p-4 text-emerald-600 font-semibold"></td>
+                                    <td class="p-4">0 CP</td>
                                 </tr>
                                 <tr class="bg-gray-50">
-                                    <td class="p-4 font-bold text-gray-800">Tổng số CP sở hữu</td>
-                                    <td id="div-val-total-n1" class="p-4 font-bold text-lg text-blue-700"></td>
-                                    <td id="div-val-total-n2" class="p-4 font-bold text-lg text-orange-700"></td>
+                                    <td class="p-4 font-bold text-gray-800">Tổng số CP sở hữu (Sau GDKHQ)</td>
+                                    <!-- Text Emerald -->
+                                    <td id="div-val-total-n1" class="p-4 font-bold text-lg text-emerald-700"></td>
+                                    <!-- Text Xám -->
+                                    <td id="div-val-total-n2" class="p-4 font-bold text-lg text-gray-700"></td>
                                 </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="p-4 font-bold text-gray-800">Tiền mặt ròng (Sau GDKHQ)</td>
+                                    <td id="div-val-net-cash1" class="p-4 font-bold text-lg"></td>
+                                    <td id="div-val-net-cash2" class="p-4 font-bold text-lg"></td>
+                                </tr>
+                                <!-- Nền highlight - Navy -->
                                 <tr class="bg-blue-50 border-t-2 border-blue-200">
                                     <td class="p-4 font-bold text-blue-800">
                                         Tổng giá trị tài sản<br>
                                         <span class="text-xs font-normal">(Tổng CP * Giá P' + Tiền mặt ròng)</span>
                                     </td>
-                                    <td id="div-val-asset1" class="p-4 font-bold text-2xl text-blue-600"></td>
-                                    <td id="div-val-asset2" class="p-4 font-bold text-2xl text-orange-600"></td>
+                                    <!-- Text Emerald -->
+                                    <td id="div-val-asset1" class="p-4 font-bold text-2xl text-emerald-600"></td>
+                                    <!-- Text Xám -->
+                                    <td id="div-val-asset2" class="p-4 font-bold text-2xl text-gray-600"></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             
-                <!-- Phần 4: Diễn giải & Khuyến nghị (Cổ tức) -->
+                <!-- Phần 4: Diễn giải & Khuyến nghị (Cổ tức - Sửa đổi) -->
                 <div class="p-6 md:p-8">
                     <h2 class="text-xl font-bold text-blue-900 border-b-2 border-blue-200 pb-2 mb-6">
                         PHẦN 4: DIỄN GIẢI KỊCH BẢN (CHỈ CHIA CỔ TỨC/THƯỞNG)
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                        <!-- Kịch bản 1: Mua trước -->
-                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg shadow">
-                            <h4 class="font-bold text-lg text-blue-800 mb-2">✅ KỊCH BẢN 1: MUA TRƯỚC GDKHQ</h4>
-                            <p id="div-dynamic-reco-1" class="text-sm text-gray-700 space-y-2">
+                        <!-- Kịch bản 1 - Chuyển sang Emerald -->
+                        <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg shadow">
+                            <h4 class="font-bold text-lg text-emerald-800 mb-2">✅ KỊCH BẢN 1: NẮM GIỮ HƯỞNG QUYỀN</h4>
+                            <div id="div-dynamic-reco-1" class="text-sm text-gray-700 space-y-2">
                                 <!-- Nội dung động -->
-                            </p>
+                            </div>
                         </div>
-                        <!-- Kịch bản 2: Mua sau -->
-                        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg shadow">
-                            <h4 class="font-bold text-lg text-orange-800 mb-2">➡️ KỊCH BẢN 2: MUA SAU GDKHQ</h4>
-                            <p id="div-dynamic-reco-2" class="text-sm text-gray-700 space-y-2">
+                        <!-- Kịch bản 2 - Chuyển sang Xám trung tính -->
+                        <div class="bg-gray-50 border-l-4 border-gray-500 p-4 rounded-r-lg shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">🔄 KỊCH BẢN 2: BÁN (P) & MUA LẠI (P')</h4>
+                            <div id="div-dynamic-reco-2" class="text-sm text-gray-700 space-y-2">
                                 <!-- Nội dung động -->
-                            </p>
+                            </div>
                         </div>
                     </div>
                     <div class="mt-6 bg-gray-100 p-4 rounded-lg text-center">
@@ -329,12 +342,13 @@
                 <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
                     <li>Các tính toán trên đây chỉ mang tính chất tham khảo, dựa trên lý thuyết về việc điều chỉnh giá tại ngày GDKHQ.</li>
                     <li>Giá trị thị trường của cổ phiếu sau ngày GDKHQ sẽ biến động theo cung cầu thực tế, không nhất thiết bằng đúng giá điều chỉnh P'.</li>
-                    <li>Quyết định cuối cùng phụ thuộc vào đánh giá của nhà đầu tư về tiềm năng tăng trưởng của doanh nghiệp và chiến lược đầu tư cá nhân.</li>
+                    <li>Quyết định cuối cùng phụ thuộc vào đánh giá của nhà đầu tư về tiềm năng tăng trưởng của doanh nghiệp, chiến lược đầu tư cá nhân và các yếu...</li>
                 </ul>
             </div>
         </div>
     </div>
 
+    <!-- SCRIPT KHÔNG ĐỔI -->
     <script>
         document.getElementById('calculateBtn').addEventListener('click', function() {
             // --- 1. LẤY DỮ LIỆU ĐẦU VÀO ---
@@ -365,7 +379,8 @@
             const effective_Pa = R2 > 0 ? Pa : 0;
             
             if (denominator > 0) {
-                P_prime = (P + effective_Pa * R2 - C) / denominator;
+                // Đảm bảo P_prime không âm, trường hợp C > P
+                P_prime = Math.max(0, (P + effective_Pa * R2 - C) / denominator);
             }
 
             // --- 5. ĐỊNH DẠNG SỐ LIỆU (Formatter) ---
@@ -386,6 +401,7 @@
             `;
             
             // --- 7. LOGIC PHÂN NHÁNH KỊCH BẢN ---
+            // Kịch bản Quyền Mua chỉ kích hoạt khi CÓ TỶ LỆ và CÓ GIÁ PHÁT HÀNH
             const isRightsIssue = (R2 > 0 && Pa > 0);
             
             // Ẩn cả 2 khối phân tích trước
@@ -404,6 +420,7 @@
                 const Cash_out = N_new * Pa;
                 const Net_cash_1 = Cash_in - Cash_out;
                 const Net_cash_2 = Cash_in;
+                // Lợi ích = Số CP mua thêm * (Giá điều chỉnh - Giá ưu đãi)
                 const Total_Benefit = N_new * (P_prime - Pa);
 
                 // Điền bảng (Phần 3)
@@ -423,7 +440,8 @@
                 document.getElementById('val-loss').textContent = `-${formatVND(Total_Benefit)}`;
                 
                 // Điền diễn giải (Phần 4)
-                const benefitFormatted = `<strong class='text-green-700'>${formatVND(Total_Benefit)}</strong>`;
+                // Chỉnh sửa highlight text cho phù hợp với màu emerald
+                const benefitFormatted = `<strong class='text-emerald-700'>${formatVND(Total_Benefit)}</strong>`;
                 const paFormatted = `<strong>${formatVND(Pa)}</strong>`;
                 const pPrimeFormatted = `<strong>${formatVND(P_prime)}</strong>`;
                 const nNewFormatted = `<strong>${formatCP(N_new)}</strong>`;
@@ -431,7 +449,7 @@
                 document.getElementById('dynamic-reco-1').innerHTML = 
                     `<div>Việc phải nộp thêm tiền để mua ${nNewFormatted} có thể khiến bạn băn khoăn.</div>
                     <div>Tuy nhiên, đây là một <strong>cơ hội</strong>: bạn đang dùng tiền mặt để đổi lấy tài sản (cổ phiếu) với giá ${paFormatted}, thấp hơn nhiều so với giá trị hợp lý của nó (là ${pPrimeFormatted}).</div>
-                    <div>Khoản lợi ích tức thời ${benefitFormatted} chính là 'phần thưởng' cho hành động này. Đây là hành động <strong class='text-green-700'>bảo toàn giá trị tài sản</strong>.</div>`;
+                    <div>Khoản lợi ích tức thời ${benefitFormatted} chính là 'phần thưởng' cho hành động này. Đây là hành động <strong class='text-emerald-700'>bảo toàn giá trị tài sản</strong>.</div>`;
 
                 document.getElementById('dynamic-reco-2').innerHTML = 
                     `<div>Nếu bạn từ bỏ quyền (không nộp tiền), tài sản của bạn vẫn bị pha loãng (vì giá P' đã giảm), nhưng bạn lại <strong class='text-red-700'>đánh mất</strong> khoản lợi ích ${benefitFormatted} ở trên.</div>
@@ -443,47 +461,56 @@
             } else {
                 // --- KỊCH BẢN 2: CHỈ CHIA CỔ TỨC/THƯỞNG ---
                 
-                // Tính toán
+                // Tính toán KB 1 (Nắm giữ)
                 const N_bonus = N * R1;
                 const Cash_in = N * C;
-                const TotalCapital_1 = N * P;
-                const TotalCapital_2 = N * P_prime;
                 const TotalShares_1 = N + N_bonus;
-                const TotalShares_2 = N;
+                const NetCash_1 = Cash_in;
+                const TotalAssetValue_1 = (TotalShares_1 * P_prime) + NetCash_1;
 
-                // Tổng giá trị tài sản (Key)
-                const TotalAssetValue_1 = (TotalShares_1 * P_prime) + Cash_in;
-                const TotalAssetValue_2 = TotalShares_2 * P_prime; // Chính là bằng TotalCapital_2
+                // Tính toán KB 2 (Bán P, Mua lại P')
+                const CashFromSelling = N * P;
+                // Số CP mua lại được, chỉ mua khi P_prime > 0
+                const TotalShares_2 = (P_prime > 0) ? (CashFromSelling / P_prime) : 0; 
+                const NetCash_2 = 0; // Vì đã dùng hết tiền để mua lại CP
+                const TotalAssetValue_2 = TotalShares_2 * P_prime; 
+                // TotalAssetValue_2 về lý thuyết sẽ bằng CashFromSelling (N*P)
 
-                // Điền bảng (Phần 3)
+                // Điền bảng (Phần 3 - Sửa đổi)
                 document.getElementById('div-val-n1').textContent = formatCP(N);
-                document.getElementById('div-val-n2').textContent = formatCP(N);
-                document.getElementById('div-val-price1').textContent = formatVND(P);
-                document.getElementById('div-val-price2').textContent = formatVND(P_prime);
-                document.getElementById('div-val-capital1').textContent = formatVND(TotalCapital_1);
-                document.getElementById('div-val-capital2').textContent = formatVND(TotalCapital_2);
+                document.getElementById('div-val-n-sell').textContent = formatCP(N); // Hiển thị số CP bán
                 document.getElementById('div-val-cash-in1').textContent = `+${formatVND(Cash_in)}`;
                 document.getElementById('div-val-bonus1').textContent = `+${formatCP(N_bonus)}`;
                 document.getElementById('div-val-total-n1').textContent = formatCP(TotalShares_1);
                 document.getElementById('div-val-total-n2').textContent = formatCP(TotalShares_2);
+                document.getElementById('div-val-net-cash1').textContent = formatVND(NetCash_1);
+                document.getElementById('div-val-net-cash2').textContent = formatVND(NetCash_2);
                 document.getElementById('div-val-asset1').textContent = formatVND(TotalAssetValue_1);
                 document.getElementById('div-val-asset2').textContent = formatVND(TotalAssetValue_2);
 
-                // Điền diễn giải (Phần 4)
+                // Điền diễn giải (Phần 4 - Sửa đổi)
                 document.getElementById('div-dynamic-reco-1').innerHTML = 
-                    `<div>Bạn bỏ ra <strong class="text-gray-800">${formatVND(TotalCapital_1)}</strong> để mua ${formatCP(N)} ở giá P.</div>
-                    <div>Sau GDKHQ, bạn nhận về ${formatVND(Cash_in)} tiền mặt và ${formatCP(N_bonus)}.</div>
-                    <div>Tổng tài sản của bạn (CP quy đổi theo giá P' + Tiền mặt) là <strong class="text-blue-700">${formatVND(TotalAssetValue_1)}</strong>.</div>`;
+                    `<div>Bạn nắm giữ ${formatCP(N)} qua ngày GDKHQ.</div>
+                    <div>Sau đó, bạn nhận về ${formatVND(Cash_in)} tiền mặt và ${formatCP(N_bonus)}.</div>
+                    <div>Tổng tài sản của bạn (CP quy đổi theo giá P' + Tiền mặt) là <strong class="text-emerald-700">${formatVND(TotalAssetValue_1)}</strong>.</div>`;
                 
                 document.getElementById('div-dynamic-reco-2').innerHTML =
-                    `<div>Bạn đợi sau GDKHQ, mua đúng ${formatCP(N)} với giá P' đã điều chỉnh.</div>
-                    <div>Tổng vốn bạn bỏ ra chỉ là <strong class="text-gray-800">${formatVND(TotalCapital_2)}</strong>.</div>
-                    <div>Tổng tài sản của bạn (chỉ có CP) cũng là <strong class="text-orange-700">${formatVND(TotalAssetValue_2)}</strong>.</div>`;
+                    `<div>Bạn bán ${formatCP(N)} tại giá P, thu về <strong class="text-gray-800">${formatVND(CashFromSelling)}</strong>.</div>
+                    <div>Sau GDKHQ, bạn dùng toàn bộ số tiền này mua lại cổ phiếu ở giá P', bạn sẽ mua được ${formatCP(TotalShares_2)}.</div>
+                    <div>Tổng tài sản của bạn (chỉ có CP) là <strong class="text-gray-700">${formatVND(TotalAssetValue_2)}</strong>.</div>`;
 
-                document.getElementById('div-dynamic-conclusion').innerHTML =
-                    `Về lý thuyết, tổng giá trị tài sản của hai kịch bản là <strong>tương đương nhau</strong>. 
-                    Việc mua trước GDKHQ chỉ đơn giản là "nhận" cổ tức, và giá cổ phiếu bị điều chỉnh giảm tương ứng.
-                    Quyết định phụ thuộc vào việc bạn có muốn nhận cổ tức (tiền mặt/CP) hay không, hoặc các yếu tố về thuế TNCN (nếu có).`;
+                // So sánh 2 giá trị tài sản (đã làm tròn) để đưa ra kết luận
+                let conclusionText = "";
+                if (Math.round(TotalAssetValue_1) === Math.round(TotalAssetValue_2)) {
+                    conclusionText = `Về lý thuyết, tổng giá trị tài sản của hai kịch bản là <strong>tương đương tuyệt đối</strong>. 
+                                      Quyết định không làm thay đổi tài sản của bạn, mà chỉ thay đổi hình thức (từ CP sang Tiền và ngược lại).`;
+                } else {
+                    conclusionText = `Có sự chênh lệch nhỏ do làm tròn số. Về bản chất, giá trị tài sản không đổi.`;
+                }
+                
+                conclusionText += ` Quyết định nắm giữ hay "lướt" (bán P mua P') phụ thuộc vào chiến lược cá nhân và các yếu tố thuế/phí.`;
+                
+                document.getElementById('div-dynamic-conclusion').innerHTML = conclusionText;
 
                 // Hiển thị khối phân tích Cổ tức
                 document.getElementById('dividendOnlyAnalysis').style.display = 'block';
